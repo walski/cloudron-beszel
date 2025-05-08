@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "healthCheckPath": "/",
+  "httpPort": 8090,
+  "addons": {
+    "localstorage": {},
+    "oidc": {
+      "loginRedirectUri": "/api/oauth2-redirect",
+      "logoutRedirectUri": "/",
+      "tokenSignatureAlgorithm": "RS256"
+    }
+  },
+ "manifestVersion": 2
+}
+
