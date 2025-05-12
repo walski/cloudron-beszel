@@ -1,5 +1,20 @@
 {
+  "id": "com.beszel.cloudronapp",
   "version": "0.1.0",
+  "title": "Beszel",
+  "author": "Beszel Authors",
+  "upstreamVersion": "0.11.1",
+  "description": "file://DESCRIPTION.md",
+  "tagline": "Simple, lightweight server monitoring",
+  "icon": "file://logo.png",
+  "website": "https://beszel.dev/",
+  "changelog": "file://CHANGELOG.md",
+  "tags": [
+    "monitoring",
+    "analytics",
+    "status"
+  ],
+  "optionalSso": false,
   "healthCheckPath": "/",
   "httpPort": 8090,
   "addons": {
@@ -8,6 +23,25 @@
       "loginRedirectUri": "/api/oauth2-redirect",
       "logoutRedirectUri": "/",
       "tokenSignatureAlgorithm": "RS256"
+    }
+  },
+  "mediaLinks": [
+    "https://screenshots.cloudron.io/com.getoutline.cloudronapp/home-system.png",
+    "https://screenshots.cloudron.io/com.getoutline.cloudronapp/home-dashboard.png",
+    "https://screenshots.cloudron.io/com.getoutline.cloudronapp/home-alerts.png"
+  ],
+  "checklist": {
+    "license-agreement": {
+      "message": "Read and accept [the MIT license restrictions](https://github.com/henrygd/beszel/blob/main/LICENSE)"
+    },
+    "email-registration": {
+      "message": "Email & password authentication is disabled by default. You can enable it setting the `DISABLE_PASSWORD_AUTH` to `false` in `/app/data/env.sh`"
+    },
+    "super-admin": {
+      "message": "No super admin is created by default. Use `./beszel superuser create --dir /app/data/pb_data/ someone@example.com somepassword` to create one through the terminal."
+    },
+    "no-admin": {
+      "message": "Cloudron OIDC authenticated user are not automatically made app admins in Beszel. Beszel works perfectly fine without any admin users. Create a superuser and give any OIDC user the `admin` role. Superadmin is at: `/_/#/`"
     }
   },
  "manifestVersion": 2
