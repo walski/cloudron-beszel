@@ -4,3 +4,10 @@ RUN mkdir -p /app/code
 WORKDIR /app/code
 
 RUN curl -sL "https://github.com/henrygd/beszel/releases/latest/download/beszel_$(uname -s)_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/armv6l/arm/' -e 's/armv7l/arm/' -e 's/aarch64/arm64/').tar.gz" | tar -xz -O beszel | tee ./beszel >/dev/null && chmod +x beszel
+
+COPY env.sh.template start.sh /app/pkg/
+
+ADD start.sh /app/code/
+ADD setup-oidc.sh /app/code/
+
+CMD [ "/app/code/start.sh" ]
